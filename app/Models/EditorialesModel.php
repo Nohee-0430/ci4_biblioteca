@@ -4,8 +4,8 @@ use CodeIgniter\Model;
 
 class EmpleadosModel extends Model 
 {
-    protected $table = 'empleados';
-    protected $primaryKey = 'codigo_empleado';
+    protected $table = 'editoriales';
+    protected $primaryKey = 'codigo_editoriales';
     protected $allowedFields = [
         'codigo_empleado',
         'nombre',
