@@ -7,7 +7,12 @@ use CodeIgniter\Model;
 class PrestamosModel extends Model
 {
     protected $table            = 'prestamos';
-    protected $primaryKey       = 'id';
-    protected $allowedFields    = [];
-
+    protected $primaryKey       = 'numero_prestamo';
+    protected $allowedFields    = [
+        "codigo_libro",
+        "carne_alumno",
+        "fecha_prestamo",
+        "fecha_devolucion",
+        "codigo_empleado"
+    ];
 }
