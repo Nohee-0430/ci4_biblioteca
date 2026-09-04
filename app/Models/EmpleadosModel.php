@@ -15,4 +15,4 @@ class EmpleadosModel extends Model
         "email"
     ];
 
-}
+} 
