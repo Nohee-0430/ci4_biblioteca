@@ -26,7 +26,7 @@ class EmpleadosController extends BaseController
             'direccion'=>$direccion,
             'email'=>$email
         ];
-        $empleados->insert($datos);
+        $empleados->insert($datos); 
         return $this->mostrarDatos();
     }
 }
