@@ -1,12 +1,14 @@
 <?php
+
 namespace App\Controllers;
-use App\Models\EmpleadosModel;
-class EmpleadosController extends BaseController
+
+use App\Controllers\BaseController;
+use CodeIgniter\HTTP\ResponseInterface;
+
+class EditorialesController extends BaseController
 {
-    public function mostrarDatos()
+    public function index()
     {
-        $empleados = new EmpleadosModel();
-        $datos['datos']=$empleados->findAll();
-        return view('empleados',$datos);
-    } 
+        //
+    }
 }

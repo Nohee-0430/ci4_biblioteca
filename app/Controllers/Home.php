@@ -8,8 +8,4 @@ class Home extends BaseController
     {
         return view('welcome_message');
     }
-    public function verMensaje():string
-    {
-        return view('pagina_mensaje')-,
-    }
 }
