@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Préstamos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
     <form action="<?=base_url('actualizar'); ?>" class="form" method="post">
-        <label for="txt_codigo" class="form-label">Código</label>
-        <input type="text" name="txt_codigo" id="txt_codigo" class="form-control" value="<?=$datos['numero_prestamo'];?>">
-        <label for="txt_nombre" class="form-label">Nombre</label>
-        <input type="text" name="txt_nombre" id="txt_nombre" class="form-control" value="<?=$datos['nombre'];?>">
-        <label for="txt_apellido" class="form-label">Apellido</label>
-        <input type="text" name="txt_apellido" id="txt_apellido" class="form-control" value="<?=$datos['apellido'];?>">
-        <label for="txt_email" class="form-label">Email</label>
-        <input type="email" name="txt_email" id="txt_email" class="form-control" value="<?=$datos['email'];?>">
-        <label for="txt_direccion" class="form-label">Dirección</label>
-        <input type="text" name="txt_direccion" id="txt_direccion" class="form-control" value="<?=$datos['direccion'];?>">
+        <label for="txt_codigoPrestamo" class="form-label">Código del Préstamo</label>
+        <input type="text" name="txt_codigoPrestamo" id="txt_codigoPrestamo" class="form-control" value="<?=$datos['numero_prestamo'];?>">
+        <label for="txt_codigoLibro" class="form-label">Código del Libro</label>
+        <input type="text" name="txt_codigoLibro" id="txt_codigoLibro" class="form-control" value="<?=$datos['codigo_libro'];?>">
+        <label for="txt_codigoEstudiante" class="form-label">Carné del Alumno</label>
+        <input type="text" name="txt_codigoEstudiante" id="txt_codigoEstudiante" class="form-control" value="<?=$datos['carne_alumno'];?>">
+        <label for="txt_fechaPrestamo" class="form-label">Fecha de Préstamo</label>
+        <input type="date" name="txt_fechaPrestamo" id="txt_fechaPrestamo" class="form-control" value="<?=$datos['fecha_prestamo'];?>">
+        <label for="txt_fechaDevolucion" class="form-label">Fecha de Devolución</label>
+        <input type="date" name="txt_fechaDevolucion" id="txt_fechaDevolucion" class="form-control" value="<?=$datos['fecha_devolucion'];?>">
+        <label for="txt_codigoEmpleado" class="form-label">Código del Empleado</label>
+        <input type="text" name="txt_codigoEmpleado" id="txt_codigoEmpleado" class="form-control" value="<?=$datos['codigo_empleado'];?>">
         <button type="submit" class="form-control btn btn-primary">Guardar cambios</button>
 
     </form>

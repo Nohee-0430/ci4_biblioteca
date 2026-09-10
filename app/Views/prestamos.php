@@ -55,10 +55,12 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Código</th>
-                        <th>Nombre</th>
-                        <th>Dirección</th>
-                        <th>Email</th>
+                        <th>Código del Préstamo</th>
+                        <th>Código del Libro</th>
+                        <th>Carné del Alumno</th>
+                        <th>Fecha de Préstamo</th>
+                        <th>Fecha de Devolución</th>
+                        <th>Código del Empleado</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -68,13 +70,15 @@
                     ?>
                     <tr>
                         <td><?=$prestamo['codigo_prestamo']?></td>
-                        <td><?=$prestamo['nombre']." ".$prestamo['apellido'];?></td>
-                        <td><?=$prestamo['direccion']?></td>
-                        <td><?=$prestamo['email']?></td>
+                        <td><?=$prestamo['codigo_libro']?></td>
+                        <td><?=$prestamo['carne_alumno']?></td>
+                        <td><?=$prestamo['fecha_prestamo']?></td>
+                        <td><?=$prestamo['fecha_devolucion']?></td>
+                        <td><?=$prestamo['codigo_empleado']?></td>
                         <td>
                             <a href="<?=base_url('buscar/').$prestamo['codigo_prestamo'];?>" class="btn btn-primary">Actualizar</a>
                             <!--eliminar tiene la ruta eliminar/codigo-->
-                            <a href="<?=base_url('eliminar/').$prestamo['codigo_prestamo'];?>" class="btn btn-danger">eliminar</a>
+                            <a href="<?=base_url('eliminar/').$prestamo['codigo_prestamo'];?>" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
                     <?php 
