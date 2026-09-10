@@ -1,25 +1,34 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autores</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<body>
-    <form action="<?=base_url('actualizar'); ?>" class="form" method="post">
-        <label for="txt_codigo" class="form-label">Código</label>
-        <input type="text" name="txt_codigo" id="txt_codigo" class="form-control" value="<?=$datos['codigo_autor'];?>">
-        <label for="txt_apellido" class="form-label">Apellido</label>
-        <input type="text" name="txt_apellido" id="txt_apellido" class="form-control" value="<?=$datos['apellido'];?>">
-        <label for="txt_nombre" class="form-label">Nombre</label>
-        <input type="text" name="txt_nombre" id="txt_nombre" class="form-control" value="<?=$datos['nombre'];?>">
-        <label for="txt_nacionalidad" class="form-label">Nacionalidad</label>
-        <input type="text" name="txt_nacionalidad" id="txt_nacionalidad" class="form-control" value="<?=$datos['nacionalidad'];?>">
-        <button type="submit" class="form-control btn btn-primary">Guardar cambios</button>
+<?= $this->extend('layout/template') ?>
+<?= $this->section('content') ?>
 
-    </form>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
-</html>
+<div class="card shadow mt-4 mx-auto" style="max-width: 600px;">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Actualizar Autor</h3>
+    </div>
+    <div class="card-body">
+        <form action="<?=base_url('autores/actualizar'); ?>" class="form" method="post">
+            <div class="mb-3">
+                <label for="txt_codigo" class="form-label">Código</label>
+                <input type="text" name="txt_codigo" id="txt_codigo" class="form-control" value="<?=$datos['codigo_autor'];?>" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="txt_apellido" class="form-label">Apellido</label>
+                <input type="text" name="txt_apellido" id="txt_apellido" class="form-control" value="<?=$datos['apellido'];?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="txt_nombre" class="form-label">Nombre</label>
+                <input type="text" name="txt_nombre" id="txt_nombre" class="form-control" value="<?=$datos['nombre'];?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="txt_nacionalidad" class="form-label">Nacionalidad</label>
+                <input type="text" name="txt_nacionalidad" id="txt_nacionalidad" class="form-control" value="<?=$datos['nacionalidad'];?>">
+            </div>
+            <div class="d-flex justify-content-between">
+                <a href="<?=base_url('autores')?>" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<?= $this->endSection() ?>

@@ -1,94 +1,87 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Préstamos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container-fluid">
-        <header>
-            <h1>Préstamos</h1>
-        </header> 
-        <main>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#PrestamosModal">
-            Agregar Préstamo
-            </button>
-            <!-- Modal -->
-            <div class="modal fade" id="PrestamosModal" tabindex="-1" aria-labelledby="PrestamosModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="PrestamosModalLabel">Agregar Préstamo</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    
-                    <form action="<?=base_url('insertar'); ?>" class="form" method="post">
-                        <label for="txt_codigoPrestamo" class="form-label">Código del Préstamo</label>
-                        <input type="text" name="txt_codigoPrestamo" id="txt_codigoPrestamo" class="form-control">
-                        <label for="txt_codigoLibro" class="form-label">Código del Libro</label>
-                        <input type="text" name="txt_codigoLibro" id="txt_codigoLibro" class="form-control">
-                        <label for="txt_codigoEstudiante" class="form-label">Carné del Alumno</label>
-                        <input type="text" name="txt_codigoEstudiante" id="txt_codigoEstudiante" class="form-control">
-                        <label for="txt_fechaPrestamo" class="form-label">Fecha de Préstamo</label>
-                        <input type="date" name="txt_fechaPrestamo" id="txt_fechaPrestamo" class="form-control">
-                        <label for="txt_fechaDevolucion" class="form-label">Fecha de Devolución</label>
-                        <input type="date" name="txt_fechaDevolucion" id="txt_fechaDevolucion" class="form-control">
-                        <label for="txt_codigoEmpleado" class="form-label">Código del Empleado</label>
-                        <input type="text" name="txt_codigoEmpleado" id="txt_codigoEmpleado" class="form-control">
-                        <button type="submit" class="form-control btn btn-primary">Guardar cambios</button>
+<?= $this->extend('layout/template') ?>
+<?= $this->section('content') ?>
 
-                    </form>
+<h1 class="mt-4">Préstamos</h1>
 
+<button type="button" class="btn btn-primary my-3" data-bs-toggle="modal" data-bs-target="#PrestamosModal">
+    Nuevo Préstamo
+</button>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-    
-                </div>
-                </div>
+<!-- Modal -->
+<div class="modal fade" id="PrestamosModal" tabindex="-1" aria-labelledby="PrestamosModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="PrestamosModalLabel">Agregar Préstamo</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="modal-body">
+                <form action="<?=base_url('prestamos/insertar'); ?>" class="form" method="post">
+                    <div class="mb-3">
+                        <label for="txt_codigo" class="form-label">Número de Préstamo</label>
+                        <input type="text" name="txt_codigo" id="txt_codigo" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txt_codigo_libro" class="form-label">Código del Libro</label>
+                        <input type="number" name="txt_codigo_libro" id="txt_codigo_libro" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txt_carne_alumno" class="form-label">Carné del Alumno</label>
+                        <input type="number" name="txt_carne_alumno" id="txt_carne_alumno" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="txt_fecha_prestamo" class="form-label">Fecha de Préstamo</label>
+                        <input type="date" name="txt_fecha_prestamo" id="txt_fecha_prestamo" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="txt_fecha_devolucion" class="form-label">Fecha de Devolución</label>
+                        <input type="date" name="txt_fecha_devolucion" id="txt_fecha_devolucion" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="txt_codigo_empleado" class="form-label">Código de Empleado (Autoriza)</label>
+                        <input type="number" name="txt_codigo_empleado" id="txt_codigo_empleado" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Guardar cambios</button>
+                </form>
             </div>
-            <table class="table table-striped">
-                <thead>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+                <thead class="table-dark">
                     <tr>
-                        <th>Código del Préstamo</th>
-                        <th>Código del Libro</th>
-                        <th>Carné del Alumno</th>
-                        <th>Fecha de Préstamo</th>
-                        <th>Fecha de Devolución</th>
-                        <th>Código del Empleado</th>
+                        <th>N° Préstamo</th>
+                        <th>ID Libro</th>
+                        <th>Carné Alumno</th>
+                        <th>Fecha Préstamo</th>
+                        <th>Fecha Devolución</th>
+                        <th>ID Empleado</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php 
-                        foreach ($datos as $prestamo) {
-                    ?>
+                    <?php foreach ($datos as $prestamo): ?>
                     <tr>
-                        <td><?=$prestamo['codigo_prestamo']?></td>
+                        <td><?=$prestamo['numero_prestamo']?></td>
                         <td><?=$prestamo['codigo_libro']?></td>
                         <td><?=$prestamo['carne_alumno']?></td>
                         <td><?=$prestamo['fecha_prestamo']?></td>
                         <td><?=$prestamo['fecha_devolucion']?></td>
                         <td><?=$prestamo['codigo_empleado']?></td>
                         <td>
-                            <a href="<?=base_url('buscar/').$prestamo['codigo_prestamo'];?>" class="btn btn-primary">Actualizar</a>
-                            <!--eliminar tiene la ruta eliminar/codigo-->
-                            <a href="<?=base_url('eliminar/').$prestamo['codigo_prestamo'];?>" class="btn btn-danger">Eliminar</a>
+                            <a href="<?=base_url('prestamos/buscar/').$prestamo['numero_prestamo'];?>" class="btn btn-sm btn-info">Actualizar</a>
+                            <a href="<?=base_url('prestamos/eliminar/').$prestamo['numero_prestamo'];?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar préstamo?');">Eliminar</a>
                         </td>
                     </tr>
-                    <?php 
-                        }
-                    ?>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
-        </main>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  </body>
-</body>
-</html>
+</div>
+
+<?= $this->endSection() ?>

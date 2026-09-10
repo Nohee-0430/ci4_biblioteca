@@ -1,29 +1,42 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Préstamos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<body>
-    <form action="<?=base_url('actualizar'); ?>" class="form" method="post">
-        <label for="txt_codigoPrestamo" class="form-label">Código del Préstamo</label>
-        <input type="text" name="txt_codigoPrestamo" id="txt_codigoPrestamo" class="form-control" value="<?=$datos['numero_prestamo'];?>">
-        <label for="txt_codigoLibro" class="form-label">Código del Libro</label>
-        <input type="text" name="txt_codigoLibro" id="txt_codigoLibro" class="form-control" value="<?=$datos['codigo_libro'];?>">
-        <label for="txt_codigoEstudiante" class="form-label">Carné del Alumno</label>
-        <input type="text" name="txt_codigoEstudiante" id="txt_codigoEstudiante" class="form-control" value="<?=$datos['carne_alumno'];?>">
-        <label for="txt_fechaPrestamo" class="form-label">Fecha de Préstamo</label>
-        <input type="date" name="txt_fechaPrestamo" id="txt_fechaPrestamo" class="form-control" value="<?=$datos['fecha_prestamo'];?>">
-        <label for="txt_fechaDevolucion" class="form-label">Fecha de Devolución</label>
-        <input type="date" name="txt_fechaDevolucion" id="txt_fechaDevolucion" class="form-control" value="<?=$datos['fecha_devolucion'];?>">
-        <label for="txt_codigoEmpleado" class="form-label">Código del Empleado</label>
-        <input type="text" name="txt_codigoEmpleado" id="txt_codigoEmpleado" class="form-control" value="<?=$datos['codigo_empleado'];?>">
-        <button type="submit" class="form-control btn btn-primary">Guardar cambios</button>
+<?= $this->extend('layout/template') ?>
+<?= $this->section('content') ?>
 
-    </form>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
-</html>
+<div class="card shadow mt-4 mx-auto" style="max-width: 600px;">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Actualizar Préstamo</h3>
+    </div>
+    <div class="card-body">
+        <form action="<?=base_url('prestamos/actualizar'); ?>" class="form" method="post">
+            <div class="mb-3">
+                <label for="txt_codigo" class="form-label">Número de Préstamo</label>
+                <input type="text" name="txt_codigo" id="txt_codigo" class="form-control" value="<?=$datos['numero_prestamo'];?>" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="txt_codigo_libro" class="form-label">Código del Libro</label>
+                <input type="number" name="txt_codigo_libro" id="txt_codigo_libro" class="form-control" value="<?=$datos['codigo_libro'];?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="txt_carne_alumno" class="form-label">Carné del Alumno</label>
+                <input type="number" name="txt_carne_alumno" id="txt_carne_alumno" class="form-control" value="<?=$datos['carne_alumno'];?>" required>
+            </div>
+            <div class="mb-3">
+                <label for="txt_fecha_prestamo" class="form-label">Fecha de Préstamo</label>
+                <input type="date" name="txt_fecha_prestamo" id="txt_fecha_prestamo" class="form-control" value="<?=$datos['fecha_prestamo'];?>">
+            </div>
+            <div class="mb-3">
+                <label for="txt_fecha_devolucion" class="form-label">Fecha de Devolución</label>
+                <input type="date" name="txt_fecha_devolucion" id="txt_fecha_devolucion" class="form-control" value="<?=$datos['fecha_devolucion'];?>">
+            </div>
+            <div class="mb-3">
+                <label for="txt_codigo_empleado" class="form-label">Código de Empleado</label>
+                <input type="number" name="txt_codigo_empleado" id="txt_codigo_empleado" class="form-control" value="<?=$datos['codigo_empleado'];?>">
+            </div>
+            <div class="d-flex justify-content-between">
+                <a href="<?=base_url('prestamos')?>" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<?= $this->endSection() ?>
