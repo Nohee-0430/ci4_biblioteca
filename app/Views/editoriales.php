@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empleados</title>
+    <title>Editoriales</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
     <div class="container-fluid">
         <header>
-            <h1>Empleados</h1>
+            <h1>Editoriales</h1>
         </header>
         <main>
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EmpleadosModal">
-            Agregar Empleado
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditorialesModal">
+            Agregar Editorial
             </button>
             <!-- Modal -->
-            <div class="modal fade" id="EmpleadosModal" tabindex="-1" aria-labelledby="EmpleadosModalLabel" aria-hidden="true">
+            <div class="modal fade" id="EditorialesModal" tabindex="-1" aria-labelledby="EditorialesModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="EmpleadosModalLabel">Agregar Empleado</h1>
+                    <h1 class="modal-title fs-5" id="EditorialesModalLabel">Agregar Editorial</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -31,12 +31,13 @@
                         <input type="text" name="txt_codigo" id="txt_codigo" class="form-control">
                         <label for="txt_nombre" class="form-label">Nombre</label>
                         <input type="text" name="txt_nombre" id="txt_nombre" class="form-control">
-                        <label for="txt_apellido" class="form-label">Apellido</label>
-                        <input type="text" name="txt_apellido" id="txt_apellido" class="form-control">
-                        <label for="txt_email" class="form-label">Email</label>
-                        <input type="text" name="txt_email" id="txt_email" class="form-control">
                         <label for="txt_direccion" class="form-label">Dirección</label>
                         <input type="text" name="txt_direccion" id="txt_direccion" class="form-control">
+                        <label for="txt_telefono" class="form-label">Teléfono</label>
+                        <input type="text" name="txt_telefono" id="txt_telefono" class="form-control">
+                        <label for="txt_email" class="form-label">Email</label>
+                        <input type="text" name="txt_email" id="txt_email" class="form-control">
+                        
                         <button type="submit" class="form-control btn btn-primary">Guardar cambios</button>
 
                     </form>
@@ -56,23 +57,25 @@
                         <th>Código</th>
                         <th>Nombre</th>
                         <th>Dirección</th>
+                        <th>Teléfono</th>
                         <th>Email</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
-                        foreach ($datos as $empleado) {
+                        foreach ($datos as $editorial) {
                     ?>
                     <tr>
-                        <td><?=$empleado['codigo_empleado']?></td>
-                        <td><?=$empleado['nombre']." ".$empleado['apellido'];?></td>
-                        <td><?=$empleado['direccion']?></td>
-                        <td><?=$empleado['email']?></td>
+                        <td><?=$editorial['codigo_editorial']?></td>
+                        <td><?=$editorial['nombre']?></td>
+                        <td><?=$editorial['direccion']?></td>
+                        <td><?=$editorial['telefono']?></td>
+                        <td><?=$editorial['email']?></td>
                         <td>
-                            <a href="<?=base_url('buscar/').$empleado['codigo_empleado'];?>" class="btn btn-primary">Actualizar</a>
+                            <a href="<?=base_url('buscar/').$editorial['codigo_editorial'];?>" class="btn btn-primary">Actualizar</a>
                             <!--eliminar tiene la ruta eliminar/codigo-->
-                            <a href="<?=base_url('eliminar/').$empleado['codigo_empleado'];?>" class="btn btn-danger">eliminar</a>
+                            <a href="<?=base_url('eliminar/').$editorial['codigo_editorial'];?>" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
                     <?php 

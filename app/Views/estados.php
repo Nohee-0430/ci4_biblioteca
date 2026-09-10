@@ -53,7 +53,7 @@
                         <td>
                             <a href="<?=base_url('buscar/').$estado['codigo_estado'];?>" class="btn btn-primary">Actualizar</a>
                             <!--eliminar tiene la ruta eliminar/codigo-->
-                            <a href="<?=base_url('eliminar/').$estado['codigo_estado'];?>" class="btn btn-danger">eliminar</a>
+                            <a href="<?=base_url('eliminar/').$estado['codigo_estado'];?>" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
                     <?php 
