@@ -2,15 +2,9 @@
 namespace App\Models;
 use CodeIgniter\Model;
 
-class EmpleadosModel extends Model 
+class EditorialesModel extends Model 
 {
     protected $table = 'editoriales';
-    protected $primaryKey = 'codigo_editoriales';
-    protected $allowedFields = [
-        'codigo_empleado',
-        'nombre',
-        'apellido',
-        'direccion',
-        'email'
-    ];
+    protected $primaryKey = 'codigo_editorial';
+    protected $allowedFields = ['codigo_editorial', 'nombre', 'direccion', 'telefono', 'email'];
 }
