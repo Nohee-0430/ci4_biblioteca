@@ -9,7 +9,7 @@
 <body>
     <form action="<?=base_url('actualizar'); ?>" class="form" method="post">
         <label for="txt_codigo" class="form-label">Código</label>
-        <input type="text" name="txt_codigo" id="txt_codigo" class="form-control" value="<?=$datos['codigo_empleado'];?>">
+        <input type="text" name="txt_codigo" id="txt_codigo" class="form-control" value="<?=$datos['codigo_grado'];?>">
         <label for="txt_nombre" class="form-label">Nombre</label>
         <input type="text" name="txt_nombre" id="txt_nombre" class="form-control" value="<?=$datos['nombre'];?>">
         <button type="submit" class="form-control btn btn-primary">Guardar cambios</button>

@@ -36,7 +36,7 @@
                         <label for="txt_telefono" class="form-label">Teléfono</label>
                         <input type="text" name="txt_telefono" id="txt_telefono" class="form-control">
                         <label for="txt_email" class="form-label">Email</label>
-                        <input type="text" name="txt_email" id="txt_email" class="form-control">
+                        <input type="email" name="txt_email" id="txt_email" class="form-control">
                         
                         <button type="submit" class="form-control btn btn-primary">Guardar cambios</button>
 

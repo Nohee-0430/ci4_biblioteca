@@ -9,13 +9,13 @@
 <body>
     <form action="<?=base_url('actualizar'); ?>" class="form" method="post">
         <label for="txt_codigo" class="form-label">Código</label>
-        <input type="text" name="txt_codigo" id="txt_codigo" class="form-control" value="<?=$datos['codigo_empleado'];?>">
+        <input type="text" name="txt_codigo" id="txt_codigo" class="form-control" value="<?=$datos['numero_prestamo'];?>">
         <label for="txt_nombre" class="form-label">Nombre</label>
         <input type="text" name="txt_nombre" id="txt_nombre" class="form-control" value="<?=$datos['nombre'];?>">
         <label for="txt_apellido" class="form-label">Apellido</label>
         <input type="text" name="txt_apellido" id="txt_apellido" class="form-control" value="<?=$datos['apellido'];?>">
         <label for="txt_email" class="form-label">Email</label>
-        <input type="text" name="txt_email" id="txt_email" class="form-control" value="<?=$datos['email'];?>">
+        <input type="email" name="txt_email" id="txt_email" class="form-control" value="<?=$datos['email'];?>">
         <label for="txt_direccion" class="form-label">Dirección</label>
         <input type="text" name="txt_direccion" id="txt_direccion" class="form-control" value="<?=$datos['direccion'];?>">
         <button type="submit" class="form-control btn btn-primary">Guardar cambios</button>

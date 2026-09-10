@@ -34,7 +34,7 @@
                         <label for="txt_apellido" class="form-label">Apellido</label>
                         <input type="text" name="txt_apellido" id="txt_apellido" class="form-control">
                         <label for="txt_email" class="form-label">Email</label>
-                        <input type="text" name="txt_email" id="txt_email" class="form-control">
+                        <input type="email" name="txt_email" id="txt_email" class="form-control">
                         <label for="txt_direccion" class="form-label">Dirección</label>
                         <input type="text" name="txt_direccion" id="txt_direccion" class="form-control">
                         <button type="submit" class="form-control btn btn-primary">Guardar cambios</button>
