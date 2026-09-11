@@ -1,1 +1,0 @@
-Codeigniter4: verificación
